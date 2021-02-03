@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  /* display: flex; */
+  /* justify-content: center; */
+}
+
+.card-section {
+  display: flex;
+  /* align-items: center; */
+}
+
+.desktop-card {
+  margin-top: 200px;
+  height: 400px;
+  width: 400px;
+  border: solid black 1px;
+}
