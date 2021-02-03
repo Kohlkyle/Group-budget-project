@@ -10,9 +10,22 @@
   <body class="container">
     <main>
       <section class="header-section">
-        <h1>Geek Wallet</h1>
-        <p>Income</p>
-        <button>Update Budget</button>
+        <!-- <h1>Geek Wallet</h1>
+        <p class="weekly-budget">Income</p>
+        <button>Update Budget</button> -->
+
+        <div class="weekly-budget-section">
+          <h1>Geek Wallet:</h1>
+          <p class=weekly-budget">Weekly Budget</p>
+          <form class="income-input">
+            <input
+              type="number"
+              id="income_input"
+              placeholder="Weekly income"
+            />
+            <button id="update_income">Update Budget</button>
+          </form>
+        </div>
       </section>
 
       <section class="card-section">
