@@ -33,10 +33,9 @@ let entertainment = [];
 let entertainmentAmount = 0;
 
 //===============Expense Amount $$$$$$ ==========
-let amountInput = document.querySelector(".amount-input");
 let expenseTotal = document.querySelector(".expense-total");
 let amountLeft = document.querySelector(".amount-left");
-
+let addButton = document.querySelectorAll(".add-button");
 entertainmentForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -48,9 +47,13 @@ entertainmentForm.addEventListener("submit", (e) => {
     //expense amount
   };
 
-  let entertainmentAmount = snapshot.get("amountInput");
+  entertainmentAmount =
+    entertainmentAmount + parseFloat(snapshot.get("amount-input"));
 
   expenseTotal.textContent = `Expense Total: $${entertainmentAmount}`;
+
+  amountLeft = weeklyIncome - parseFloat(snapshot.get("budget-amount"));
+  // weeklyIncome.textContent = `Remaining Balance: $${weeklyIncome}`;
 
   // ==============appends entertainment names to footer ======================
 
