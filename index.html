@@ -4,33 +4,58 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="./images/favicon.ico" />
     <title>Geek Wallet</title>
   </head>
 
   <body class="container">
     <main>
-      <section class="header-section">
-        <!-- <h1>Geek Wallet</h1>
-        <p class="weekly-budget">Income</p>
-        <button>Update Budget</button> -->
+      <section>
+        <h1>Geek Wallet</h1>
+        <p class="weekly-budget">Weekly Budget: $0.00</p>
 
-        <div class="weekly-budget-section">
-          <h1>Geek Wallet:</h1>
-          <p class=weekly-budget">Weekly Budget</p>
-          <form class="income-input">
-            <input
-              type="number"
-              id="income_input"
-              placeholder="Weekly income"
-            />
-            <button id="update_income">Update Budget</button>
-          </form>
-        </div>
+        <form class="weekly-form">
+          <label for="budget-amount">How's the cash looking this week?</label>
+          <input
+            type="number"
+            id="budget-amount"
+            name="budget-amount"
+            placeholder="Weekly Income"
+          />
+
+          <button class="update-budget">Update Budget</button>
+        </form>
+
+        <img class="hide-jim" src="./images/money.png" alt="" />
       </section>
 
+      <!-- Card Section -->
+
       <section class="card-section">
-        <div class="desktop-card">
+        <div class="desktop-card entertainment">
           <h2>Entertainment</h2>
+          <form class="entertainment-form">
+            <input
+              type="text"
+              id="entertainmentname"
+              name="entertainmentname"
+              class="entertainmentname"
+              placeholder="Entertainment Cost"
+            />
+
+            <input
+              type="number"
+              id="amount-input"
+              class="amount-input"
+              name="amount-input"
+              placeholder="Expense Amount"
+            />
+            <button id="add-expense">Add</button>
+          </form>
+        </div>
+
+        <div class="desktop-card">
+          <h2>Food</h2>
           <form>
             <input type="text" id="name-input" placeholder="Expense Name" />
             <input
@@ -43,7 +68,7 @@
         </div>
 
         <div class="desktop-card">
-          <h2>Entertainment</h2>
+          <h2>Clothing</h2>
           <form>
             <input type="text" id="name-input" placeholder="Expense Name" />
             <input
@@ -56,20 +81,7 @@
         </div>
 
         <div class="desktop-card">
-          <h2>Entertainment</h2>
-          <form>
-            <input type="text" id="name-input" placeholder="Expense Name" />
-            <input
-              type="number"
-              id="amount-input"
-              placeholder="Expense Amount"
-            />
-            <button id="add-expense">Add</button>
-          </form>
-        </div>
-
-        <div class="desktop-card">
-          <h2>Entertainment</h2>
+          <h2>Bills</h2>
           <form>
             <input type="text" id="name-input" placeholder="Expense Name" />
             <input
@@ -83,8 +95,12 @@
       </section>
 
       <footer>
-        <p>Money Left:</p>
-        <p class="amount-left">Total:</p>
+        <p class="entertainment-expense">Entertainment:</p>
+        <p>Food:</p>
+        <p>Clothing:</p>
+        <p>Bills:</p>
+        <p class="expense-total">Expense Total:</p>
+        <p class="amount-left">Remaining Balance:</p>
       </footer>
     </main>
 
