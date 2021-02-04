@@ -1,27 +1,73 @@
 "use strict";
 
-let cards = document.querySelectorAll(".desktop-card");
-let addExpense = document.querySelector(".add-expense");
-let weeklyBudgetSection = document.querySelector(".weekly-budget-section");
+let weeklyForm = document.querySelector(".weekly-form");
 let weeklyBudget = document.querySelector(".weekly-budget");
-let incomeInput = document.querySelector(".income-input");
+let updateBudgetButton = document.querySelector(".update-budget");
+
+// ================Weekly budget ==================
+
+let weeklyIncome = 0;
+
+weeklyForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  let snapshot = new FormData(weeklyForm);
+  let weeklyIncome = snapshot.get("budget-amount");
+
+  // if (weeklyIncome > 2000) {
+  //   let mask = document.createElement("div");
+  //   mask.classList.add("jimCarrey");
+  // }
+
+  weeklyBudget.textContent = `Weekly Budget: $${weeklyIncome}`;
+});
+
+// ==============Entertainment Card======================
+// let entertainment = document.querySelector(".entertainment");
+
+let nameInput = document.querySelector(".name-input");
+let entertainmentExpense = document.querySelector(".entertainment-expense");
+let entertainmentForm = document.querySelector(".entertainment-form");
+
+let entertainment = [];
+let entertainmentAmount = 0;
+
+//===============Expense Amount $$$$$$ ==========
+let amountInput = document.querySelector(".amount-input");
+let expenseTotal = document.querySelector(".expense-total");
 let amountLeft = document.querySelector(".amount-left");
 
-let startingBudget = 0;
+entertainmentForm.addEventListener("submit", (e) => {
+  e.preventDefault();
 
-function updateBudget(event) {
-  event.preventDefault();
-  startingBudget = incomeInput.value;
-  weeklyBudget.innerText = "$" + startingBudget;
-  incomeInput.value = "";
-  updateBalance();
-}
+  let snapshot = new FormData(entertainmentForm);
+  let entertainmentType = snapshot.get("entertainmentname");
 
-let balance = 0;
-let expenseTotal = 0;
+  let entertainmentObject = {
+    entertainmentname: entertainmentType,
+    //expense amount
+  };
 
-function updateBalance() {
-  balance = startingBudget - expenseTotal;
-  amountLeft.innerText = "$" + balance;
-  // add colors
-}
+  let entertainmentAmount = snapshot.get("amountInput");
+
+  expenseTotal.textContent = `Expense Total: $${entertainmentAmount}`;
+
+  // ==============appends entertainment names to footer ======================
+
+  entertainmentForm.reset();
+
+  entertainment.push(entertainmentObject);
+
+  entertainmentExpense.innerHTML = "Entertainment:";
+
+  entertainment.forEach((item, index) => {
+    let span = document.createElement("span");
+    if (index === 0) {
+      span.textContent = `${item.entertainmentname}`;
+    } else {
+      span.textContent = `, ${item.entertainmentname}`;
+    }
+
+    entertainmentExpense.append(span);
+  });
+});
