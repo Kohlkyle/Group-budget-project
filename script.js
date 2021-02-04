@@ -50,12 +50,12 @@ entertainmentForm.addEventListener("submit", (e) => {
   };
 
   // ================Trying to make above function global to all cards================
-  const cardMath = (e) => {
-    cards.addEventListener("submit", (e) => {
-      e.preventDefault();
-      console.dir(cards);
-    });
-  };
+  // const cardMath = (e) => {
+  //   cards.addEventListener("submit", (e) => {
+  //     e.preventDefault();
+  //     console.dir(cards);
+  //   });
+  // };
   // =================
   // ==============appends entertainment names to footer ======================
 
