@@ -47,14 +47,6 @@ entertainmentForm.addEventListener("submit", (e) => {
     //expense amount
   };
 
-  entertainmentAmount =
-    entertainmentAmount + parseFloat(snapshot.get("amount-input"));
-
-  expenseTotal.textContent = `Expense Total: $${entertainmentAmount}`;
-
-  amountLeft = weeklyIncome - parseFloat(snapshot.get("budget-amount"));
-  // weeklyIncome.textContent = `Remaining Balance: $${weeklyIncome}`;
-
   // ==============appends entertainment names to footer ======================
 
   entertainmentForm.reset();
@@ -73,4 +65,11 @@ entertainmentForm.addEventListener("submit", (e) => {
 
     entertainmentExpense.append(span);
   });
+  entertainmentAmount =
+    entertainmentAmount + parseFloat(snapshot.get("amount-input"));
+
+  expenseTotal.textContent = `Expense Total: $${entertainmentAmount}`;
+
+  amountLeft.textContent = `Remaining Balance: $${weeklyIncome}`; //- parseFloat(snapshot.get(expenseTotal));
+  // amountLeft.textContent = `Remaining Balance: $${amountLeft}`;
 });
