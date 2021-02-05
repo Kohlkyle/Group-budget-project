@@ -39,12 +39,14 @@
         <img class="mask-images" src="./images/money.png" alt="" />
       </section>
 
-      <!-- Card Section -->
+      <!---------- Card Section ------------>
 
-      <section class="card-section">
+      <!---------- Entertainment Card ------------>
+
+      <section class="card-container">
         <div class="desktop-card entertainment">
           <h2>Entertainment</h2>
-          <form class="entertainment-form">
+          <form class="entertainment-form" data-type="entertainment">
             <input
               type="text"
               id="entertainmentname"
@@ -57,7 +59,7 @@
             <input
               type="number"
               id="amount-input"
-              name="amount-input"
+              name="input"
               placeholder="Expense Amount"
               required
             />
@@ -65,54 +67,89 @@
           </form>
         </div>
 
+        <!---------- Food Card ------------>
+
         <div class="desktop-card">
           <h2>Food</h2>
-          <form>
-            <input type="text" id="name-input" placeholder="Expense Name" />
+          <form class="food-form" data-type="food">
+            <input
+              type="text"
+              id="entertainmentname"
+              name="entertainmentname"
+              class="entertainmentname"
+              placeholder="Entertainment Cost"
+              required
+            />
+
             <input
               type="number"
               id="amount-input"
+              name="input"
               placeholder="Expense Amount"
               required
             />
-            <button id="add-expense">Add</button>
+            <button class="add-button" id="add-expense" data-cost>Add</button>
           </form>
         </div>
+
+        <!---------- Clothing Card ------------>
 
         <div class="desktop-card">
           <h2>Clothing</h2>
-          <form>
-            <input type="text" id="name-input" placeholder="Expense Name" />
+          <form class="clothing-form" data-type="clothing">
+            <input
+              type="text"
+              id="entertainmentname"
+              name="entertainmentname"
+              class="entertainmentname"
+              placeholder="Entertainment Cost"
+              required
+            />
+
             <input
               type="number"
               id="amount-input"
+              name="input"
               placeholder="Expense Amount"
               required
             />
-            <button id="add-expense">Add</button>
+            <button class="add-button" id="add-expense" data-cost>Add</button>
           </form>
         </div>
 
+        <!---------- Bills Card ------------>
+
         <div class="desktop-card">
           <h2>Bills</h2>
-          <form>
-            <input type="text" id="name-input" placeholder="Expense Name" />
+          <form class="bills-form" data-type="bills">
+            <input
+              type="text"
+              id="entertainmentname"
+              name="entertainmentname"
+              class="entertainmentname"
+              placeholder="Entertainment Cost"
+              required
+            />
+
             <input
               type="number"
               id="amount-input"
+              name="input"
               placeholder="Expense Amount"
               required
             />
-            <button id="add-expense">Add</button>
+            <button class="add-button" id="add-expense" data-cost>Add</button>
           </form>
         </div>
       </section>
 
+      <!---------- Footer ------------>
+
       <footer class="footer-container">
         <p class="entertainment-expense">Entertainment:</p>
-        <p>Food:</p>
-        <p>Clothing:</p>
-        <p>Bills:</p>
+        <p class="food-expense">Food:</p>
+        <p class="clothing-expense">Clothing:</p>
+        <p class="bills-expense">Bills:</p>
         <p class="expense-total">Expense Total:</p>
         <p class="amount-left">Remaining Balance:</p>
       </footer>
