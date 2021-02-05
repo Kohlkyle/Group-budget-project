@@ -6,15 +6,19 @@
 
 body {
   background-color: #e5e4cc;
-  font-family: "PT Sans", sans-serif;
+  font-family: 'PT Sans', sans-serif;
   text-align: center;
 }
 
 h1 {
   font-size: 4em;
   color: #698474;
+<<<<<<< HEAD
+  font-family: 'PT Sans', sans-serif;
+=======
   text-shadow: 2px 2px 4px #000000;
   font-family: "PT Sans", sans-serif;
+>>>>>>> 38e4950f5013dd511373f7b9d126867780acc4b5
 }
 
 .budget-container {
@@ -39,7 +43,16 @@ h1 {
   background-origin: border-box;
 }
 
-.hide-images {
+.happy {
+  display: none;
+}
+.worried {
+  display: none;
+}
+.money {
+  display: none;
+}
+.bad-guy {
   display: none;
 }
 
