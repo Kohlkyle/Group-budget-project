@@ -1,103 +1,127 @@
-'use strict'
+"use strict";
 
-let weeklyForm = document.querySelector('.weekly-form')
-let weeklyBudget = document.querySelector('.weekly-budget')
-let updateBudgetButton = document.querySelector('.update-budget')
-let cards = document.querySelectorAll('.card-section')
+let weeklyForm = document.querySelector(".weekly-form");
+let weeklyBudget = document.querySelector(".weekly-budget");
+let updateBudgetButton = document.querySelector(".update-budget");
+
 // ================Weekly budget ==================
 
-let weeklyIncome = 0
+let weeklyIncome = 0;
 
-weeklyForm.addEventListener('submit', (e) => {
-  e.preventDefault()
+weeklyForm.addEventListener("submit", (e) => {
+  e.preventDefault();
 
-  let snapshot = new FormData(weeklyForm)
-  weeklyIncome = snapshot.get('budget-amount')
+  let snapshot = new FormData(weeklyForm);
+  weeklyIncome = snapshot.get("budget-amount");
 
-  // if (weeklyIncome > 2000) {
-  //   let mask = document.createElement("div");
-  //   mask.classList.add("jimCarrey");
-  // }
+  weeklyBudget.textContent = `Weekly Budget: $${weeklyIncome}`;
+});
 
-  weeklyBudget.textContent = `Weekly Budget: $${weeklyIncome}`
-})
+// ==============Card Section======================
+let cardContainer = document.querySelector(".card-container");
 
-// ==============Entertainment Card======================
-// let entertainment = document.querySelector(".entertainment");
+let entertainmentForm = document.querySelector(".entertainment-form");
+let foodForm = document.querySelector(".food-form");
+let clothingForm = document.querySelector(".clothing-form");
+let billsForm = document.querySelector(".bills-form");
 
-let nameInput = document.querySelector('.name-input')
-let entertainmentExpense = document.querySelector('.entertainment-expense')
-let entertainmentForm = document.querySelector('.entertainment-form')
+let addButton = document.querySelectorAll(".add-button");
 
-let entertainment = []
-let entertainmentAmount = 0
+let entertainmentExpense = document.querySelector(".entertainment-expense"); //footerValue
+let foodExpense = document.querySelector(".food-expense"); //footerValue
+let clothingExpense = document.querySelector(".clothing-expense"); //footerValue
+let billsExpense = document.querySelector(".bills-expense"); //footerValue
 
-//===============Expense Amount $$$$$$ ==========
+let expenseTotal = document.querySelector(".expense-total"); //footerValue
+let amountLeft = document.querySelector(".amount-left"); //footerValue
 
-let expenseTotal = document.querySelector('.expense-total')
-let amountLeft = document.querySelector('.amount-left')
-let addButton = document.querySelectorAll('.add-button')
+let entertainment = 0;
+let clothing = 0;
+let bills = 0;
+let food = 0;
+let entertainmentAmount = 0;
 
-entertainmentForm.addEventListener('submit', (e) => {
-  e.preventDefault()
+cardContainer.addEventListener("submit", (e) => {
+  e.preventDefault();
 
-  let snapshot = new FormData(entertainmentForm)
-  let entertainmentType = snapshot.get('entertainmentname')
+  console.dir(e.target);
+
+  let type = e.target.getAttribute("data-type");
+  console.log(type);
+
+  let snapshot = null;
+
+  let index = 0;
+
+  if (type === "entertainment") {
+    snapshot = new FormData(entertainmentForm);
+    index = entertainment;
+    entertainment++;
+  } else if (type === "food") {
+    index = food;
+    snapshot = new FormData(foodForm);
+    food++;
+  } else if (type === "clothing") {
+    snapshot = new FormData(clothingForm);
+    index = clothing;
+    clothing++;
+  } else {
+    snapshot = new FormData(billsForm);
+    index = bills;
+    bills++;
+  }
+
+  let entertainmentType = snapshot.get("entertainmentname");
 
   let entertainmentObject = {
     entertainmentname: entertainmentType,
-    //expense amount
+  };
+
+  entertainmentForm.reset();
+  clothingForm.reset();
+  foodForm.reset();
+  billsForm.reset();
+
+  let span = document.createElement("span");
+  if (index === 0) {
+    span.textContent = `${entertainmentObject.entertainmentname}`;
+  } else {
+    span.textContent = `, ${entertainmentObject.entertainmentname}`;
   }
 
-  // ================Trying to make above function global to all cards================
-  // const cardMath = (e) => {
-  //   cards.addEventListener("submit", (e) => {
-  //     e.preventDefault();
-  //     console.dir(cards);
-  //   });
-  // };
-  // =================
-  // ==============appends entertainment names to footer ======================
+  if (type === "entertainment") {
+    entertainmentExpense.append(span);
+  } else if (type === "food") {
+    foodExpense.append(span);
+  } else if (type === "clothing") {
+    clothingExpense.append(span);
+  } else {
+    billsExpense.append(span);
+  }
+  // });
+  entertainmentAmount = entertainmentAmount + parseFloat(snapshot.get("input"));
 
-  entertainmentForm.reset()
+  // =====below adds to footer expense total======
 
-  entertainment.push(entertainmentObject)
+  expenseTotal.textContent = `Expense Total: $${entertainmentAmount}`;
 
-  entertainmentExpense.innerHTML = 'Entertainment:'
-
-  entertainment.forEach((item, index) => {
-    let span = document.createElement('span')
-    if (index === 0) {
-      span.textContent = `${item.entertainmentname}`
-    } else {
-      span.textContent = `, ${item.entertainmentname}`
-    }
-
-    entertainmentExpense.append(span)
-  })
-  entertainmentAmount =
-    entertainmentAmount + parseFloat(snapshot.get('amount-input'))
-
-  expenseTotal.textContent = `Expense Total: $${entertainmentAmount}`
+  // =====below adds to footer remaining balance total======
 
   amountLeft.textContent = `Remaining Balance: $${
     parseFloat(weeklyIncome) - parseFloat(entertainmentAmount)
-  }`
-  showImage()
-  //- parseFloat(snapshot.get(expenseTotal));
-  // amountLeft.textContent = `Remaining Balance: $${amountLeft}`;
-})
+  }`;
+});
 
 const showImage = () => {
-  let happy = document.querySelector('.happy')
-  let money = document.querySelector('.money')
-  let worried = document.querySelector('.worried')
-  let badGuy = document.querySelector('.bad-guy')
+  let happy = document.querySelector(".happy");
+  let money = document.querySelector(".money");
+  let worried = document.querySelector(".worried");
+  let badGuy = document.querySelector(".bad-guy");
   if (amountLeft >= 2000) {
-    money.classList.remove('money')
+    money.classList.remove("money");
   } else if (amountLeft < 2000 && amountLeft > 700) {
-    happy.classList.remove('happy')
+    happy.classList.remove("happy");
   } else {
-    worried.classList.remove('worried')
+    worried.classList.remove("worried");
   }
-}
+};
