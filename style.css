@@ -61,46 +61,48 @@ footer {
   position: absolute;
   bottom: 0;
   text-align: justify;
-  margin: 0 auto;
+  flex: 0 0 50px; /*or just height:50px;*/
+  margin-top: auto;
+  /* margin: 0 auto; */
   /* margin-left: 40%; */
   width: 100%;
   font-family: "PT Sans", sans-serif;
   background-color: #698474;
 }
-.entertainment-expense {
+.footer-entertainment {
   text-align: justify;
   margin: 0 auto;
-  margin-left: 40%;
+  margin-left: 5%;
   color: #e5e4cc;
 }
-.expense-total {
+.footer-expense-total {
   text-align: justify;
   margin: 0 auto;
-  margin-left: 40%;
+  margin-left: 5%;
   color: #e5e4cc;
 }
-.amount-left {
+.footer-amount-left {
   text-align: justify;
   margin: 0 auto;
-  margin-left: 40%;
+  margin-left: 5%;
   color: #e5e4cc;
 }
-.food-class {
+.footer-food {
   text-align: justify;
   margin: 0 auto;
-  margin-left: 40%;
+  margin-left: 5%;
   color: #e5e4cc;
 }
-.clothing-class {
+.footer-clothing {
   text-align: justify;
   margin: 0 auto;
-  margin-left: 40%;
+  margin-left: 5%;
   color: #e5e4cc;
 }
-.bills-class {
+.footer-bills {
   text-align: justify;
   margin: 0 auto;
-  margin-left: 40%;
+  margin-left: 5%;
   color: #e5e4cc;
 }
 
@@ -117,10 +119,12 @@ footer {
   }
   .mobile-container {
     display: inline-flex;
+    flex: 1;
+    position: relative;
     align-items: center;
     justify-content: center;
-    height: 60vh;
-    width: 60vh;
+    height: 40vh;
+    width: 40vh;
     background-color: #bac7a7;
     background: linear-gradient(to top, #f8dc81, #f8dc81 10px, transparent 10px),
       linear-gradient(to right, #ffdf91, #ffdf91 10px, transparent 10px),
@@ -131,7 +135,7 @@ footer {
     border-radius: 0.313em;
   }
   .desktop-card-mobile {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     padding: 0.625em;
@@ -141,49 +145,51 @@ footer {
   /* ===!!!issue=== */
   /* need area to not overlap content but not be horizontal */
   footer {
-    position: absolute;
+    flex: 0 0 50px; /*or just height:50px;*/
+    margin-top: auto;
     bottom: 0;
     text-align: justify;
-    margin: 0 auto;
+    /* margin: 0 auto; */
     /* margin-left: 40%; */
     width: 100%;
     font-family: "PT Sans", sans-serif;
     background-color: #698474;
   }
-  .entertainment-expense {
+
+  .footer-entertainment {
     text-align: justify;
     margin: 0 auto;
-    margin-left: 40%;
+    margin-left: 5%;
     color: #e5e4cc;
   }
-  .expense-total {
+  .footer-expense-total {
     text-align: justify;
     margin: 0 auto;
-    margin-left: 40%;
+    margin-left: 5%;
     color: #e5e4cc;
   }
-  .amount-left {
+  .footer-amount-left {
     text-align: justify;
     margin: 0 auto;
-    margin-left: 40%;
+    margin-left: 5%;
     color: #e5e4cc;
   }
-  .food-class {
+  .footer-food {
     text-align: justify;
     margin: 0 auto;
-    margin-left: 40%;
+    margin-left: 5%;
     color: #e5e4cc;
   }
-  .clothing-class {
+  .footer-clothing {
     text-align: justify;
     margin: 0 auto;
-    margin-left: 40%;
+    margin-left: 5%;
     color: #e5e4cc;
   }
-  .bills-class {
+  .footer-bills {
     text-align: justify;
     margin: 0 auto;
-    margin-left: 40%;
+    margin-left: 5%;
     color: #e5e4cc;
   }
 }
