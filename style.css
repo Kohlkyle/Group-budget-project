@@ -8,6 +8,9 @@ body {
   background-color: #e5e4cc;
   font-family: "PT Sans", sans-serif;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 h1 {
@@ -67,6 +70,10 @@ h1 {
 .mobile-container {
   display: none;
 }
+footer {
+  height: 150px;
+  margin-top: auto;
+}
 .footer-container {
   border-top: double #96bb7c;
   position: absolute;
@@ -88,6 +95,10 @@ h1 {
 
 /* ===media query section=== */
 @media screen and (max-width: 568px) {
+  body {
+    flex-direction: column;
+    min-height: 100vh;
+  }
   h1 {
     font-size: 3em;
     color: #698474;
@@ -122,7 +133,10 @@ h1 {
     height: 30vh;
     width: 30vh;
   }
-
+  footer {
+    height: 150px;
+    margin-top: auto;
+  }
   .footer-container {
     flex: 0 0 50px; /*or just height:50px;*/
     margin-top: auto;
