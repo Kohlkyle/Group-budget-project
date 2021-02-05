@@ -10,12 +10,12 @@
       href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap"
       rel="stylesheet"
     />
-    <title>Geek Wallet</title>
+    <title class="geek-title">Geek Wallet</title>
   </head>
 
   <body class="container">
     <main>
-      <section>
+      <section class="budget-container">
         <h1 class="heading">Geek Wallet</h1>
         <p class="weekly-budget">Weekly Budget: $0.00</p>
 
@@ -33,9 +33,10 @@
         </form>
       </section>
 
-      <section class="mask-images">
-        <img src="./images/happy-stanley.png" alt="" />
-        <img src="./images/worried-stanley.png" alt="" />
+      <section class="hide-images">
+        <img class="mask-images" src="./images/happy-stanley.png" alt="" />
+        <img class="mask-images" src="./images/worried-stanley.png" alt="" />
+        <img class="mask-images" src="./images/money.png" alt="" />
       </section>
 
       <!-- Card Section -->
@@ -116,8 +117,32 @@
         <p class="amount-left">Remaining Balance:</p>
       </footer>
 
-      <section>
-        <img src="./images/bad-guy.png" alt="" />
+      <section class="hide-images">
+        <img class="bad-guy" src="./images/bad-guy.png" alt="" />
+      </section>
+
+      <section class="mobile-container">
+        <div class="desktop-card">
+          <form>
+            <label for="type">Expense Type?</label>
+            <select name="type" id="type">
+              <option value=""></option>
+              <option value="penny">Entertainment</option>
+              <option value="nickel">Food</option>
+              <option value="dime">Clothing</option>
+              <option value="quarter">Bills</option>
+            </select>
+
+            <input type="text" id="name-input" placeholder="Expense Name" />
+            <input
+              type="number"
+              id="amount-input"
+              placeholder="Expense Amount"
+              required
+            />
+            <button>Add</button>
+          </form>
+        </div>
       </section>
     </main>
 

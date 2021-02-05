@@ -7,6 +7,7 @@
 body {
   background-color: #e5e4cc;
   font-family: "PT Sans", sans-serif;
+  text-align: center;
 }
 
 h1 {
@@ -15,30 +16,41 @@ h1 {
   font-family: "PT Sans", sans-serif;
 }
 
-/* .container { */
-/* display: flex; */
-/* justify-content: center; */
-/* } */
+.budget-container {
+  height: 35vh;
+}
 
 .card-section {
   display: flex;
-
-  /* align-items: center; */
 }
 
 .desktop-card {
   position: relative;
-  margin-top: 200px;
   height: 200px;
   width: 400px;
   padding: 5px;
   background-color: #bac7a7;
   border: dashed #889e81 3px;
+  border-radius: 5px;
 }
 
-.hide-jim {
+.hide-images {
   display: none;
+}
+
+.mask-images {
+  width: 16em;
+  height: 16em;
 }
 
 /* still need to adjust font for button and input and fix cards for mobile layout 
 color palate used: https://colorhunt.co/palette/166695*/
+
+.bad-guy {
+  width: 16em; /* made a separate class for bad guy in case it needs to be a smaller size to account for "Where's my money text" */
+  height: 16em;
+}
+
+.mobile-container {
+  display: none;
+}
