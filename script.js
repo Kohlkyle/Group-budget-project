@@ -15,6 +15,10 @@ weeklyForm.addEventListener("submit", (e) => {
   weeklyIncome = snapshot.get("budget-amount");
 
   weeklyBudget.textContent = `Weekly Budget: $${weeklyIncome}`;
+
+  showImage();
+  console.log("here");
+  weeklyForm.reset();
 });
 
 // ==============Card Section======================
@@ -112,16 +116,24 @@ cardContainer.addEventListener("submit", (e) => {
   }`;
 });
 
+let happy = document.querySelector(".happy");
+let cash = document.querySelector(".cash");
+let worried = document.querySelector(".worried");
+let badGuy = document.querySelector(".bad-guy");
+
 const showImage = () => {
-  let happy = document.querySelector(".happy");
-  let money = document.querySelector(".money");
-  let worried = document.querySelector(".worried");
-  let badGuy = document.querySelector(".bad-guy");
-  if (amountLeft >= 2000) {
-    money.classList.remove("money");
-  } else if (amountLeft < 2000 && amountLeft > 700) {
+  happy.classList.add("happy");
+  worried.classList.add("worried");
+  badGuy.classList.add("bad-guy");
+  cash.classList.add("cash");
+
+  if (weeklyIncome >= 2000) {
+    cash.classList.remove("cash");
+  } else if (weeklyIncome < 2000 && weeklyIncome >= 700) {
     happy.classList.remove("happy");
-  } else {
+  } else if (weeklyIncome > 0 && weeklyIncome < 700) {
     worried.classList.remove("worried");
+  } else {
+    badGuy.classList.remove("bad-guy");
   }
 };

@@ -39,13 +39,15 @@ h1 {
   background-origin: border-box;
 }
 
+.hide-images {
+}
 .happy {
   display: none;
 }
 .worried {
   display: none;
 }
-.money {
+.cash {
   display: none;
 }
 .bad-guy {
@@ -77,37 +79,7 @@ h1 {
   background-color: #698474;
 }
 
-.footer-entertainment {
-  text-align: justify;
-  margin: 0 auto;
-  margin-left: 5%;
-  color: #e5e4cc;
-}
-.footer-expense-total {
-  text-align: justify;
-  margin: 0 auto;
-  margin-left: 5%;
-  color: #e5e4cc;
-}
-.footer-amount-left {
-  text-align: justify;
-  margin: 0 auto;
-  margin-left: 5%;
-  color: #e5e4cc;
-}
-.footer-food {
-  text-align: justify;
-  margin: 0 auto;
-  margin-left: 5%;
-  color: #e5e4cc;
-}
-.footer-clothing {
-  text-align: justify;
-  margin: 0 auto;
-  margin-left: 5%;
-  color: #e5e4cc;
-}
-.footer-bills {
+.footer-style {
   text-align: justify;
   margin: 0 auto;
   margin-left: 5%;
@@ -162,37 +134,7 @@ h1 {
     background-color: #698474;
   }
 
-  .footer-entertainment {
-    text-align: justify;
-    margin: 0 auto;
-    margin-left: 5%;
-    color: #e5e4cc;
-  }
-  .footer-expense-total {
-    text-align: justify;
-    margin: 0 auto;
-    margin-left: 5%;
-    color: #e5e4cc;
-  }
-  .footer-amount-left {
-    text-align: justify;
-    margin: 0 auto;
-    margin-left: 5%;
-    color: #e5e4cc;
-  }
-  .footer-food {
-    text-align: justify;
-    margin: 0 auto;
-    margin-left: 5%;
-    color: #e5e4cc;
-  }
-  .footer-clothing {
-    text-align: justify;
-    margin: 0 auto;
-    margin-left: 5%;
-    color: #e5e4cc;
-  }
-  .footer-bills {
+  .footer-style {
     text-align: justify;
     margin: 0 auto;
     margin-left: 5%;
