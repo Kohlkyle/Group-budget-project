@@ -11,8 +11,9 @@ body {
 }
 
 h1 {
-  font-size: 70px;
+  font-size: 4em;
   color: #698474;
+  text-shadow: 2px 2px 4px #000000;
   font-family: "PT Sans", sans-serif;
 }
 
@@ -43,9 +44,6 @@ h1 {
   height: 16em;
 }
 
-/* still need to adjust font for button and input and fix cards for mobile layout 
-color palate used: https://colorhunt.co/palette/166695*/
-
 .bad-guy {
   width: 16em; /* made a separate class for bad guy in case it needs to be a smaller size to account for "Where's my money text" */
   height: 16em;
@@ -53,4 +51,51 @@ color palate used: https://colorhunt.co/palette/166695*/
 
 .mobile-container {
   display: none;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+/* ===media query section=== */
+@media screen and (max-width: 568px) {
+  h1 {
+    font-size: 3em;
+    color: #698474;
+    text-shadow: 1px 1px 2px #000000;
+    font-family: "PT Sans", sans-serif;
+  }
+  .desktop-card {
+    display: none;
+  }
+  .mobile-container {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 60vh;
+    width: 60vh;
+    background-color: #bac7a7;
+    border: dashed #889e81 3px;
+    border-radius: 5px;
+  }
+  .desktop-card-mobile {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    height: 30vh;
+    width: 30vh;
+  }
+  /* ===!!!issue=== */
+  /* need area to not overlap content but not be horizontal */
+  footer {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    bottom: 0;
+    width: 100%;
+  }
 }
