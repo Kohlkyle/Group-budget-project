@@ -11,9 +11,14 @@ body {
 }
 
 h1 {
-  font-size: 70px;
+  font-size: 4em;
   color: #698474;
+<<<<<<< HEAD
   font-family: 'PT Sans', sans-serif;
+=======
+  text-shadow: 2px 2px 4px #000000;
+  font-family: "PT Sans", sans-serif;
+>>>>>>> 38e4950f5013dd511373f7b9d126867780acc4b5
 }
 
 .budget-container {
@@ -26,12 +31,16 @@ h1 {
 
 .desktop-card {
   position: relative;
-  height: 200px;
-  width: 400px;
-  padding: 5px;
+  height: 12.5em;
+  width: 25em;
+  padding: 0.313em;
   background-color: #bac7a7;
-  border: dashed #889e81 3px;
-  border-radius: 5px;
+  border-radius: 0.313em;
+  background: linear-gradient(to top, #f8dc81, #f8dc81 10px, transparent 10px),
+    linear-gradient(to right, #ffdf91, #ffdf91 10px, transparent 10px),
+    linear-gradient(to bottom, #96bb7c, #96bb7c 10px, transparent 10px),
+    linear-gradient(to left, #184d47, #184d47 10px, transparent 10px);
+  background-origin: border-box;
 }
 
 .happy {
@@ -52,9 +61,6 @@ h1 {
   height: 16em;
 }
 
-/* still need to adjust font for button and input and fix cards for mobile layout 
-color palate used: https://colorhunt.co/palette/166695*/
-
 .bad-guy {
   width: 16em; /* made a separate class for bad guy in case it needs to be a smaller size to account for "Where's my money text" */
   height: 16em;
@@ -62,4 +68,141 @@ color palate used: https://colorhunt.co/palette/166695*/
 
 .mobile-container {
   display: none;
+}
+footer {
+  border-top: double #96bb7c;
+  position: absolute;
+  bottom: 0;
+  text-align: justify;
+  flex: 0 0 50px; /*or just height:50px;*/
+  margin-top: auto;
+  /* margin: 0 auto; */
+  /* margin-left: 40%; */
+  width: 100%;
+  font-family: "PT Sans", sans-serif;
+  background-color: #698474;
+}
+.footer-entertainment {
+  text-align: justify;
+  margin: 0 auto;
+  margin-left: 5%;
+  color: #e5e4cc;
+}
+.footer-expense-total {
+  text-align: justify;
+  margin: 0 auto;
+  margin-left: 5%;
+  color: #e5e4cc;
+}
+.footer-amount-left {
+  text-align: justify;
+  margin: 0 auto;
+  margin-left: 5%;
+  color: #e5e4cc;
+}
+.footer-food {
+  text-align: justify;
+  margin: 0 auto;
+  margin-left: 5%;
+  color: #e5e4cc;
+}
+.footer-clothing {
+  text-align: justify;
+  margin: 0 auto;
+  margin-left: 5%;
+  color: #e5e4cc;
+}
+.footer-bills {
+  text-align: justify;
+  margin: 0 auto;
+  margin-left: 5%;
+  color: #e5e4cc;
+}
+
+/* ===media query section=== */
+@media screen and (max-width: 568px) {
+  h1 {
+    font-size: 3em;
+    color: #698474;
+    text-shadow: 1px 1px 2px #000000;
+    font-family: "PT Sans", sans-serif;
+  }
+  .desktop-card {
+    display: none;
+  }
+  .mobile-container {
+    display: inline-flex;
+    flex: 1;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    height: 40vh;
+    width: 40vh;
+    background-color: #bac7a7;
+    background: linear-gradient(to top, #f8dc81, #f8dc81 10px, transparent 10px),
+      linear-gradient(to right, #ffdf91, #ffdf91 10px, transparent 10px),
+      linear-gradient(to bottom, #96bb7c, #96bb7c 10px, transparent 10px),
+      linear-gradient(to left, #184d47, #184d47 10px, transparent 10px);
+    background-origin: border-box;
+
+    border-radius: 0.313em;
+  }
+  .desktop-card-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.625em;
+    height: 30vh;
+    width: 30vh;
+  }
+  /* ===!!!issue=== */
+  /* need area to not overlap content but not be horizontal */
+  footer {
+    flex: 0 0 50px; /*or just height:50px;*/
+    margin-top: auto;
+    bottom: 0;
+    text-align: justify;
+    /* margin: 0 auto; */
+    /* margin-left: 40%; */
+    width: 100%;
+    font-family: "PT Sans", sans-serif;
+    background-color: #698474;
+  }
+
+  .footer-entertainment {
+    text-align: justify;
+    margin: 0 auto;
+    margin-left: 5%;
+    color: #e5e4cc;
+  }
+  .footer-expense-total {
+    text-align: justify;
+    margin: 0 auto;
+    margin-left: 5%;
+    color: #e5e4cc;
+  }
+  .footer-amount-left {
+    text-align: justify;
+    margin: 0 auto;
+    margin-left: 5%;
+    color: #e5e4cc;
+  }
+  .footer-food {
+    text-align: justify;
+    margin: 0 auto;
+    margin-left: 5%;
+    color: #e5e4cc;
+  }
+  .footer-clothing {
+    text-align: justify;
+    margin: 0 auto;
+    margin-left: 5%;
+    color: #e5e4cc;
+  }
+  .footer-bills {
+    text-align: justify;
+    margin: 0 auto;
+    margin-left: 5%;
+    color: #e5e4cc;
+  }
 }
