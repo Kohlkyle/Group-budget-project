@@ -5,26 +5,40 @@
 }
 
 body {
-  background-color: gray;
+  background-color: #e5e4cc;
+  font-family: "PT Sans", sans-serif;
 }
 
-.container {
-  /* display: flex; */
-  /* justify-content: center; */
+h1 {
+  font-size: 70px;
+  color: #698474;
+  font-family: "PT Sans", sans-serif;
 }
+
+/* .container { */
+/* display: flex; */
+/* justify-content: center; */
+/* } */
 
 .card-section {
   display: flex;
+
   /* align-items: center; */
 }
 
 .desktop-card {
+  position: relative;
   margin-top: 200px;
   height: 200px;
   width: 400px;
-  border: solid black 1px;
+  padding: 5px;
+  background-color: #bac7a7;
+  border: dashed #889e81 3px;
 }
 
 .hide-jim {
   display: none;
 }
+
+/* still need to adjust font for button and input and fix cards for mobile layout 
+color palate used: https://colorhunt.co/palette/166695*/
