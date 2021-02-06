@@ -3,7 +3,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
   background-color: #e5e4cc;
   font-family: "PT Sans", sans-serif;
@@ -12,25 +11,61 @@ body {
   flex-direction: column;
   min-height: 100vh;
 }
-
 h1 {
   font-size: 4em;
   color: #698474;
   text-shadow: 2px 2px 4px #000000;
   font-family: "PT Sans", sans-serif;
 }
-
-.budget-container {
-  height: 35vh;
+h2 {
+  color: #2a342e;
 }
-
+.budget-container {
+  display: flex;
+  flex-direction: column;
+  padding: 0.438em;
+}
+.weekly-budget {
+  padding: 3px;
+}
+/* form styling */
+.weekly-form {
+  padding: 10px;
+}
+.input-styling {
+  font-size: 14px;
+  font-weight: bolder;
+  border-radius: 0.313em;
+  font-family: "PT Sans", sans-serif;
+  background-color: rgb(0, 128, 0, 0.2);
+}
+.input-styling:focus {
+  font-family: "PT Sans", sans-serif;
+  border-radius: 0.313em;
+  background-color: rgb(0, 128, 0, 0.2);
+  border-color: rgb(255, 255, 128);
+  box-shadow: 0 1px 1px rgba(255, 255, 128, 0.075) inset,
+    0 0 8px rgba(255, 255, 128, 0.6);
+  outline: none;
+}
+.button-styling {
+  border-radius: 0.313em;
+  background-color: rgb(39, 41, 48, 0.8);
+  color: rgba(192, 192, 192, 1);
+  width: 10em;
+  font-family: "PT Sans", sans-serif;
+}
+/* card styling */
 .card-container {
   display: flex;
 }
-
 .desktop-card {
+  flex: 1;
+  flex-direction: column;
   position: relative;
-  height: 12.5em;
+  margin-right: 10px;
+  margin-left: 10px;
+  height: 8em;
   width: 25em;
   padding: 0.313em;
   background-color: #bac7a7;
@@ -40,10 +75,10 @@ h1 {
     linear-gradient(to bottom, #96bb7c, #96bb7c 10px, transparent 10px),
     linear-gradient(to left, #184d47, #184d47 10px, transparent 10px);
   background-origin: border-box;
+  box-sizing: border-box;
 }
 
-.hide-images {
-}
+/* images */
 .happy {
   display: none;
 }
@@ -56,23 +91,16 @@ h1 {
 .bad-guy {
   display: none;
 }
-
 .mask-images {
   width: 16em;
   height: 16em;
 }
-
 .bad-guy {
   width: 16em; /* made a separate class for bad guy in case it needs to be a smaller size to account for "Where's my money text" */
   height: 16em;
 }
-
 .mobile-container {
   display: none;
-}
-footer {
-  height: 150px;
-  margin-top: auto;
 }
 .footer-container {
   border-top: double #96bb7c;
@@ -84,74 +112,65 @@ footer {
   width: 100%;
   font-family: "PT Sans", sans-serif;
   background-color: #698474;
+  height: auto;
+  margin-top: auto;
+  z-index: 3;
 }
-
 .footer-style {
   text-align: justify;
+  font-size: 0.875em;
   margin: 0 auto;
   margin-left: 5%;
   color: #e5e4cc;
 }
 
-/* ===media query section=== */
+/* ===mobile design section=== */
 @media screen and (max-width: 568px) {
-  body {
-    flex-direction: column;
-    min-height: 100vh;
-  }
   h1 {
     font-size: 3em;
     color: #698474;
     text-shadow: 1px 1px 2px #000000;
     font-family: "PT Sans", sans-serif;
   }
-  .desktop-card {
+  /* mobile mask images */
+  .mask-images {
+    width: 14em;
+    height: 14em;
+    padding: 10px;
+  }
+  .bad-guy {
+    width: 14em; /* made a separate class for bad guy in case it needs to be a smaller size to account for "Where's my money text" */
+    height: 14em;
+    padding: 10px;
+  }
+  /* hide desktop */
+  .card-container {
     display: none;
   }
+  /* show mobile */
   .mobile-container {
     display: inline-flex;
-    flex: 1;
     position: relative;
     align-items: center;
     justify-content: center;
-    height: 40vh;
-    width: 40vh;
+    height: 8em;
+    width: 14em;
+    padding: 1em;
     background-color: #bac7a7;
     background: linear-gradient(to top, #f8dc81, #f8dc81 10px, transparent 10px),
       linear-gradient(to right, #ffdf91, #ffdf91 10px, transparent 10px),
       linear-gradient(to bottom, #96bb7c, #96bb7c 10px, transparent 10px),
       linear-gradient(to left, #184d47, #184d47 10px, transparent 10px);
     background-origin: border-box;
-
     border-radius: 0.313em;
   }
   .desktop-card-mobile {
     display: flex;
     align-items: center;
+    flex-direction: column;
     justify-content: center;
     padding: 0.625em;
-    height: 30vh;
-    width: 30vh;
-  }
-  footer {
-    height: 150px;
-    margin-top: auto;
-  }
-  .footer-container {
-    flex: 0 0 50px; /*or just height:50px;*/
-    margin-top: auto;
-    bottom: 0;
-    text-align: justify;
-
-    width: 100%;
-    font-family: "PT Sans", sans-serif;
-    background-color: #698474;
-  }
-
-  .footer-style {
-    text-align: justify;
-    margin: 0 auto;
-    margin-left: 5%;
-    color: #e5e4cc;
+    height: auto;
+    width: auto;
   }
 }
