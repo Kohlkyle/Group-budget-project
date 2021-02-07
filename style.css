@@ -23,8 +23,32 @@ h2 {
 .budget-container {
   display: flex;
   flex-direction: column;
+
   padding: 0.438em;
 }
+
+.the-mask-conainer {
+  position: relative;
+  background-color: aqua;
+}
+
+.the-mask {
+  width: 5.6em;
+  height: 9.6em;
+}
+
+.left {
+  left: 2%;
+  bottom: 3%;
+  position: absolute;
+}
+
+.right {
+  bottom: 3%;
+  right: 2%;
+  position: absolute;
+}
+
 .weekly-budget {
   padding: 3px;
 }
@@ -92,13 +116,10 @@ h2 {
   display: none;
 }
 .mask-images {
-  width: 16em;
-  height: 16em;
+  width: 12em;
+  height: 12em;
 }
-.bad-guy {
-  width: 16em; /* made a separate class for bad guy in case it needs to be a smaller size to account for "Where's my money text" */
-  height: 16em;
-}
+
 .mobile-container {
   display: none;
 }
@@ -125,6 +146,13 @@ h2 {
 }
 
 /* ===mobile design section=== */
+
+@media screen and (max-width: 715px) {
+  .the-mask {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 568px) {
   h1 {
     font-size: 3em;
@@ -132,6 +160,7 @@ h2 {
     text-shadow: 1px 1px 2px #000000;
     font-family: "PT Sans", sans-serif;
   }
+
   /* mobile mask images */
   .mask-images {
     width: 14em;
@@ -139,7 +168,7 @@ h2 {
     padding: 10px;
   }
   .bad-guy {
-    width: 14em; /* made a separate class for bad guy in case it needs to be a smaller size to account for "Where's my money text" */
+    width: 14em;
     height: 14em;
     padding: 10px;
   }
