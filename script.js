@@ -70,7 +70,7 @@ let entertainment = 0;
 let clothing = 0;
 let bills = 0;
 let food = 0;
-let entertainmentAmount = 0;
+let expenseAmount = 0;
 
 cardContainer.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -102,19 +102,17 @@ cardContainer.addEventListener("submit", (e) => {
     bills++;
   }
 
-  // Need to change to generic names for entertainment type / entertainement object
+  let expenseType = snapshot.get("expense");
 
-  let entertainmentType = snapshot.get("expense");
-
-  let entertainmentObject = {
-    expense: entertainmentType,
+  let expenseObject = {
+    expense: expenseType,
   };
 
   let span = document.createElement("span");
   if (index === 0) {
-    span.textContent = `${entertainmentObject.expense}`;
+    span.textContent = `${expenseObject.expense}`;
   } else {
-    span.textContent = `, ${entertainmentObject.expense}`;
+    span.textContent = `, ${expenseObject.expense}`;
   }
 
   if (type === "entertainment") {
@@ -132,15 +130,15 @@ cardContainer.addEventListener("submit", (e) => {
   foodForm.reset();
   billsForm.reset();
 
-  entertainmentAmount = entertainmentAmount + parseFloat(snapshot.get("input"));
+  expenseAmount = expenseAmount + parseFloat(snapshot.get("input"));
 
-  // =====below adds to footer expense total======
+  // =====adds to footer expense total======
 
-  expenseTotal.textContent = `Expense Total: $${entertainmentAmount}`;
+  expenseTotal.textContent = `Expense Total: $${expenseAmount}`;
 
-  // =====below adds to footer remaining balance total======
+  // =====adds to footer remaining balance total======
 
   amountLeft.textContent = `Remaining Balance: $${
-    parseFloat(weeklyIncome) - parseFloat(entertainmentAmount)
+    parseFloat(weeklyIncome) - parseFloat(expenseAmount)
   }`;
 });
