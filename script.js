@@ -21,13 +21,40 @@ weeklyForm.addEventListener("submit", (e) => {
   weeklyForm.reset();
 });
 
+//======makes images appear ============
+
+let happy = document.querySelector(".happy");
+let cash = document.querySelector(".cash");
+let worried = document.querySelector(".worried");
+let badGuy = document.querySelector(".bad-guy");
+
+const showImage = () => {
+  happy.classList.add("happy");
+  worried.classList.add("worried");
+  badGuy.classList.add("bad-guy");
+  cash.classList.add("cash");
+
+  if (weeklyIncome >= 2000) {
+    cash.classList.remove("cash");
+  } else if (weeklyIncome < 2000 && weeklyIncome >= 700) {
+    happy.classList.remove("happy");
+  } else if (weeklyIncome > 0 && weeklyIncome < 700) {
+    worried.classList.remove("worried");
+  } else {
+    badGuy.classList.remove("bad-guy");
+  }
+};
+
 // ==============Card Section======================
+
 let cardContainer = document.querySelector(".card-container");
+let mobileContainer = document.querySelector(".mobile-container");
 
 let entertainmentForm = document.querySelector(".entertainment-form");
 let foodForm = document.querySelector(".food-form");
 let clothingForm = document.querySelector(".clothing-form");
 let billsForm = document.querySelector(".bills-form");
+let mobileForm = document.querySelector(".mobile-form");
 
 let addButton = document.querySelectorAll(".add-button");
 
@@ -75,22 +102,19 @@ cardContainer.addEventListener("submit", (e) => {
     bills++;
   }
 
-  let entertainmentType = snapshot.get("entertainmentname");
+  // Need to change to generic names for entertainment type / entertainement object
+
+  let entertainmentType = snapshot.get("expense");
 
   let entertainmentObject = {
-    entertainmentname: entertainmentType,
+    expense: entertainmentType,
   };
-
-  entertainmentForm.reset();
-  clothingForm.reset();
-  foodForm.reset();
-  billsForm.reset();
 
   let span = document.createElement("span");
   if (index === 0) {
-    span.textContent = `${entertainmentObject.entertainmentname}`;
+    span.textContent = `${entertainmentObject.expense}`;
   } else {
-    span.textContent = `, ${entertainmentObject.entertainmentname}`;
+    span.textContent = `, ${entertainmentObject.expense}`;
   }
 
   if (type === "entertainment") {
@@ -102,7 +126,12 @@ cardContainer.addEventListener("submit", (e) => {
   } else {
     billsExpense.append(span);
   }
-  // });
+
+  entertainmentForm.reset();
+  clothingForm.reset();
+  foodForm.reset();
+  billsForm.reset();
+
   entertainmentAmount = entertainmentAmount + parseFloat(snapshot.get("input"));
 
   // =====below adds to footer expense total======
@@ -115,25 +144,3 @@ cardContainer.addEventListener("submit", (e) => {
     parseFloat(weeklyIncome) - parseFloat(entertainmentAmount)
   }`;
 });
-
-let happy = document.querySelector(".happy");
-let cash = document.querySelector(".cash");
-let worried = document.querySelector(".worried");
-let badGuy = document.querySelector(".bad-guy");
-
-const showImage = () => {
-  happy.classList.add("happy");
-  worried.classList.add("worried");
-  badGuy.classList.add("bad-guy");
-  cash.classList.add("cash");
-
-  if (weeklyIncome >= 2000) {
-    cash.classList.remove("cash");
-  } else if (weeklyIncome < 2000 && weeklyIncome >= 700) {
-    happy.classList.remove("happy");
-  } else if (weeklyIncome > 0 && weeklyIncome < 700) {
-    worried.classList.remove("worried");
-  } else {
-    badGuy.classList.remove("bad-guy");
-  }
-};
