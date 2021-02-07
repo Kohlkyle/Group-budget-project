@@ -56,13 +56,17 @@
           data-type="cash"
           alt=""
         />
-        <img
-          class="mask-images bad-guy"
-          src="./images/bad-guy.png"
-          id="bad-guy"
-          data-type="bad-guy"
-          alt=""
-        />
+
+        <a
+          href="https://www.youtube.com/watch?v=DsLpLziapGg&ab_channel=StGermain1977"
+          ><img
+            class="mask-images bad-guy"
+            src="./images/bad-guy.png"
+            id="bad-guy"
+            data-type="bad-guy"
+            alt=""
+          />
+        </a>
       </section>
 
       <!---------- Card Section ------------>
@@ -75,10 +79,10 @@
           <form class="entertainment-form" data-type="entertainment">
             <input
               type="text"
-              id="entertainmentname"
-              name="entertainmentname"
-              class="entertainmentname input-styling"
-              placeholder="Entertainment Cost"
+              id="expense"
+              name="expense"
+              class="input-styling"
+              placeholder="Expense Name"
               required
             />
 
@@ -107,10 +111,10 @@
           <form class="food-form" data-type="food">
             <input
               type="text"
-              id="entertainmentname"
-              name="entertainmentname"
-              class="entertainmentname input-styling"
-              placeholder="Entertainment Cost"
+              id="expense"
+              name="expense"
+              class="input-styling"
+              placeholder="Expense Name"
               required
             />
 
@@ -139,10 +143,10 @@
           <form class="clothing-form" data-type="clothing">
             <input
               type="text"
-              id="entertainmentname"
-              name="entertainmentname"
-              class="entertainmentname input-styling"
-              placeholder="Entertainment Cost"
+              id="expense"
+              name="expense"
+              class="input-styling"
+              placeholder="Expense Name"
               required
             />
 
@@ -171,10 +175,10 @@
           <form class="bills-form" data-type="bills">
             <input
               type="text"
-              id="entertainmentname"
-              name="entertainmentname"
-              class="entertainmentname input-styling"
-              placeholder="Entertainment Cost"
+              id="expense"
+              name="expense"
+              class="input-styling"
+              placeholder="Expense Name"
               required
             />
 
@@ -221,14 +225,14 @@
 
       <section class="mobile-container">
         <div class="desktop-card-mobile">
-          <form>
+          <form class="mobile-form">
             <label for="type">Expense Type?</label>
-            <select name="type" id="type" class="input-styling">
+            <select name="mobile-type" id="mobile-type" class="input-styling">
               <option value=""></option>
-              <option value="penny">Entertainment</option>
-              <option value="nickel">Food</option>
-              <option value="dime">Clothing</option>
-              <option value="quarter">Bills</option>
+              <option value="entertainment">Entertainment</option>
+              <option value="food">Food</option>
+              <option value="clothing">Clothing</option>
+              <option value="bills">Bills</option>
             </select>
 
             <input
