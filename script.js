@@ -17,7 +17,6 @@ weeklyForm.addEventListener("submit", (e) => {
   weeklyBudget.textContent = `Weekly Budget: $${weeklyIncome}`;
 
   showImage();
-  console.log("here");
   weeklyForm.reset();
 });
 
@@ -75,10 +74,7 @@ let expenseAmount = 0;
 cardContainer.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  console.dir(e.target);
-
   let type = e.target.getAttribute("data-type");
-  console.log(type);
 
   let snapshot = null;
 
