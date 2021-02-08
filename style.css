@@ -11,7 +11,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
 }
-h1 {
+.heading {
   font-size: 4em;
   color: #698474;
   text-shadow: 2px 2px 4px #000000;
@@ -51,6 +51,19 @@ h2 {
 .weekly-budget {
   padding: 3px;
 }
+
+.bad-guy-text {
+  font-size: 32px;
+  color: #cf0b0b;
+  font-family: "PT Sans", sans-serif;
+  margin-bottom: 5px;
+}
+
+a {
+  text-decoration: none;
+  font-weight: 800;
+}
+
 /* form styling */
 .weekly-form {
   padding: 10px;
@@ -153,7 +166,7 @@ h2 {
 }
 
 @media screen and (max-width: 568px) {
-  h1 {
+  .heading {
     font-size: 3em;
     color: #698474;
     text-shadow: 1px 1px 2px #000000;
