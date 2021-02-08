@@ -27,9 +27,8 @@ h2 {
   padding: 0.438em;
 }
 
-.the-mask-conainer {
+.the-mask-container {
   position: relative;
-  background-color: aqua;
 }
 
 .the-mask {

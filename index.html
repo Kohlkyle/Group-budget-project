@@ -16,7 +16,7 @@
   <body class="container">
     <main>
       <section class="budget-container">
-        <div class="the-mask-conainer">
+        <div class="the-mask-container">
           <img
             class="the-mask left"
             src="./images/jim carrrleft.PNG"
@@ -84,186 +84,182 @@
       <!---------- Card Section ------------>
 
       <!---------- Entertainment Card ------------>
+      <div class="desktop-mobile">
+        <section class="card-container">
+          <div class="desktop-card">
+            <h2>Entertainment</h2>
+            <form class="entertainment-form" data-type="entertainment">
+              <input
+                type="text"
+                id="expense"
+                name="expense"
+                class="input-styling"
+                placeholder="Expense Name"
+                required
+              />
 
-      <section class="card-container">
-        <div class="desktop-card">
-          <h2>Entertainment</h2>
-          <form class="entertainment-form" data-type="entertainment">
-            <input
-              type="text"
-              id="expense"
-              name="expense"
-              class="input-styling"
-              placeholder="Expense Name"
-              required
-            />
+              <input
+                type="number"
+                class="input-styling"
+                id="amount-input"
+                name="input"
+                placeholder="Expense Amount"
+                required
+              />
+              <button
+                class="add-button button-styling"
+                id="add-expense"
+                data-cost
+              >
+                Add
+              </button>
+            </form>
+          </div>
 
-            <input
-              type="number"
-              class="input-styling"
-              id="amount-input"
-              name="input"
-              placeholder="Expense Amount"
-              required
-            />
-            <button
-              class="add-button button-styling"
-              id="add-expense"
-              data-cost
-            >
-              Add
-            </button>
-          </form>
-        </div>
+          <!---------- Food Card ------------>
 
-        <!---------- Food Card ------------>
+          <div class="desktop-card">
+            <h2>Food</h2>
+            <form class="food-form" data-type="food">
+              <input
+                type="text"
+                id="expense"
+                name="expense"
+                class="input-styling"
+                placeholder="Expense Name"
+                required
+              />
 
-        <div class="desktop-card">
-          <h2>Food</h2>
-          <form class="food-form" data-type="food">
-            <input
-              type="text"
-              id="expense"
-              name="expense"
-              class="input-styling"
-              placeholder="Expense Name"
-              required
-            />
+              <input
+                type="number"
+                id="amount-input"
+                class="input-styling"
+                name="input"
+                placeholder="Expense Amount"
+                required
+              />
+              <button
+                class="add-button button-styling"
+                id="add-expense"
+                data-cost
+              >
+                Add
+              </button>
+            </form>
+          </div>
 
-            <input
-              type="number"
-              id="amount-input"
-              class="input-styling"
-              name="input"
-              placeholder="Expense Amount"
-              required
-            />
-            <button
-              class="add-button button-styling"
-              id="add-expense"
-              data-cost
-            >
-              Add
-            </button>
-          </form>
-        </div>
+          <!---------- Clothing Card ------------>
 
-        <!---------- Clothing Card ------------>
+          <div class="desktop-card">
+            <h2>Clothing</h2>
+            <form class="clothing-form" data-type="clothing">
+              <input
+                type="text"
+                id="expense"
+                name="expense"
+                class="input-styling"
+                placeholder="Expense Name"
+                required
+              />
 
-        <div class="desktop-card">
-          <h2>Clothing</h2>
-          <form class="clothing-form" data-type="clothing">
-            <input
-              type="text"
-              id="expense"
-              name="expense"
-              class="input-styling"
-              placeholder="Expense Name"
-              required
-            />
+              <input
+                type="number"
+                id="amount-input"
+                class="input-styling"
+                name="input"
+                placeholder="Expense Amount"
+                required
+              />
+              <button
+                class="add-button button-styling"
+                id="add-expense"
+                data-cost
+              >
+                Add
+              </button>
+            </form>
+          </div>
 
-            <input
-              type="number"
-              id="amount-input"
-              class="input-styling"
-              name="input"
-              placeholder="Expense Amount"
-              required
-            />
-            <button
-              class="add-button button-styling"
-              id="add-expense"
-              data-cost
-            >
-              Add
-            </button>
-          </form>
-        </div>
+          <!---------- Bills Card ------------>
 
-        <!---------- Bills Card ------------>
+          <div class="desktop-card">
+            <h2>Bills</h2>
+            <form class="bills-form" data-type="bills">
+              <input
+                type="text"
+                id="expense"
+                name="expense"
+                class="input-styling"
+                placeholder="Expense Name"
+                required
+              />
 
-        <div class="desktop-card">
-          <h2>Bills</h2>
-          <form class="bills-form" data-type="bills">
-            <input
-              type="text"
-              id="expense"
-              name="expense"
-              class="input-styling"
-              placeholder="Expense Name"
-              required
-            />
+              <input
+                type="number"
+                id="amount-input"
+                class="input-styling"
+                name="input"
+                placeholder="Expense Amount"
+                required
+              />
+              <button
+                class="add-button button-styling"
+                id="add-expense"
+                data-cost
+              >
+                Add
+              </button>
+            </form>
+          </div>
+        </section>
 
-            <input
-              type="number"
-              id="amount-input"
-              class="input-styling"
-              name="input"
-              placeholder="Expense Amount"
-              required
-            />
-            <button
-              class="add-button button-styling"
-              id="add-expense"
-              data-cost
-            >
-              Add
-            </button>
-          </form>
-        </div>
-      </section>
+        <section class="mobile-container">
+          <div class="desktop-card-mobile">
+            <form class="mobile-form">
+              <label for="mobile-type">Expense Type?</label>
+              <select name="mobile-type" id="mobile-type" class="input-styling">
+                <option value=""></option>
+                <option value="entertainment" data-type="entertainment">
+                  Entertainment
+                </option>
+                <option value="food" data-type="food">Food</option>
+                <option value="clothing" data-type="clothing">Clothing</option>
+                <option value="bills" data-type="bills">Bills</option>
+              </select>
 
-      <footer class="footer-container">
-        <div class="footer-style">
-          <p class="entertainment-expense footer-entertainment">
-            Entertainment:
-          </p>
-          <p class="food-expense footer-food">Food:</p>
-          <p class="clothing-expense footer-clothing">Clothing:</p>
-          <p class="bills-expense footer-clothing">Bills:</p>
-          <p class="expense-total footer-expense-total">Expense Total:</p>
-          <p class="amount-left footer-amount-left">Remaining Balance:</p>
-        </div>
-      </footer>
+              <input
+                type="text"
+                id="name-input"
+                placeholder="Expense Name"
+                name="expense"
+                class="input-styling"
+              />
+              <input
+                type="number"
+                class="input-styling"
+                id="amount-input"
+                name="input"
+                placeholder="Expense Amount"
+                required
+              />
+              <button class="button-styling">Add</button>
+            </form>
+          </div>
+        </section>
 
-      <section class="hide-images">
-        <img
-          class="bad-guy"
-          src="./images/bad-guy.png"
-          data-type="bad-guy"
-          alt=""
-        />
-      </section>
-
-      <section class="mobile-container">
-        <div class="desktop-card-mobile">
-          <form class="mobile-form">
-            <label for="type">Expense Type?</label>
-            <select name="mobile-type" id="mobile-type" class="input-styling">
-              <option value=""></option>
-              <option value="entertainment">Entertainment</option>
-              <option value="food">Food</option>
-              <option value="clothing">Clothing</option>
-              <option value="bills">Bills</option>
-            </select>
-
-            <input
-              type="text"
-              id="name-input"
-              placeholder="Expense Name"
-              class="input-styling"
-            />
-            <input
-              type="number"
-              class="input-styling"
-              id="amount-input"
-              placeholder="Expense Amount"
-              required
-            />
-            <button class="button-styling">Add</button>
-          </form>
-        </div>
-      </section>
+        <footer class="footer-container">
+          <div class="footer-style">
+            <p class="entertainment-expense footer-entertainment">
+              Entertainment:
+            </p>
+            <p class="food-expense footer-food">Food:</p>
+            <p class="clothing-expense footer-clothing">Clothing:</p>
+            <p class="bills-expense footer-clothing">Bills:</p>
+            <p class="expense-total footer-expense-total">Expense Total:</p>
+            <p class="amount-left footer-amount-left">Remaining Balance:</p>
+          </div>
+        </footer>
+      </div>
     </main>
 
     <script src="/script.js"></script>
