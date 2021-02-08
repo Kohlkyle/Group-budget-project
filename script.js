@@ -26,6 +26,7 @@ let happy = document.querySelector(".happy");
 let cash = document.querySelector(".cash");
 let worried = document.querySelector(".worried");
 let badGuy = document.querySelector(".bad-guy");
+let badGuyText = document.querySelector(".bad-guy-text");
 
 const showImage = () => {
   happy.classList.add("happy");
@@ -46,6 +47,7 @@ const showImage = () => {
     worried.classList.add("worried");
     cash.classList.add("cash");
     badGuy.classList.remove("bad-guy");
+    badGuyText.classList.remove("bad-guy");
   }
 };
 
